@@ -1,17 +1,17 @@
-python3 es siempre mejor alternativa y mejor convertir a la 2 que hacerlo al revés.
+### PYTHON3
 
-El intérprete de python es tan fácil de ejecutar como escribir python3 en el terminal.
+# python3 es siempre mejor alternativa y mejor convertir a la 2 que hacerlo al revés.
 
-Hola mundo
+# El intérprete de python es tan fácil de ejecutar como escribir python3 en el terminal.
 
-no es un lenguaje tipado
-ducktyping
-si el valor que metes en una variable parece un entero, se comporta como un entero.... es un entero
-no haria falta decir string, ni var...
+# No es un lenguaje tipado
+# ducktyping
+# Si el valor que metes en una variable parece un entero, se comporta como un entero.... es un entero
+# no haria falta decir string, ni var...
 
-el intérprete de python
+### el intérprete de python
 
-$ python  --> cuando estás en python3 aparece >>>
+$ python  // cuando estás en python3 aparece >>>
 
 >>> print("hello world")
 >>> 2 + 2
@@ -27,12 +27,9 @@ $ python  --> cuando estás en python3 aparece >>>
 >>> import this  // el zen de python, como hacerlo bien
 >>> import antigravity // una web muy loca
 
-Salimos del interprete (ctrl+d)
+# Salimos del interprete (ctrl+d)
 
-ipython!
-
-
-(mirar como transformar el tabulador en indentar 4 espacios para evitar caracteres indeseados)
+# ipython!
 
 $ vim hola.py
 '''
@@ -72,3 +69,54 @@ def myprogram():
 #myprogram()
 '''
 python myprogram.py
+
+# Al hacer esto, la función está comentada por lo que no pasa nada, podemos descomentarlo para que se ejecute al abrirlo,
+# o desde la consola de python importar la funcion y luego llamarla
+
+from myprogram import myprogram
+myprogram()
+
+
+### Creamos el entorno virtual
+
+# Crear un entorno virtual nos ayuda a crear un entorno con un python específico, y así podemos tener separadas las
+# dependencias
+
+$ python3 -m venv myenv
+$ ls #vemos una carpeta nueva
+$ source myvenv/bin/activate
+(myvenv) $ pip install requests
+(myvenv) $ python
+>>> import requests
+(myvenv) $ deactivate
+$ python
+>>> import requests
+
+# Esto nos sirve para ver como funcionan los entornos virtuales, de manera que nos permite instalar cosas virtualmente
+# pero en nuestro sistema no. Esto es genial para mantener nuestro ordenador limpio
+
+### PEQUEÑO EJERCICIO
+
+# Vamos a leer los proyectos publicos de taiga, los 20 primeros, en un csv, ordenados por total activity
+
+# API de Taiga: https://api.taiga.io/api/v1/projects
+# coger 20 proyectos (page_size=20)
+# Guardar en formato CSV
+# - id del proyecto
+# - Nombre del proyecto
+# - descripción
+# - nombre del propietario (full_name_display)
+# Ordenados por "total_activity"
+
+### Pistas
+
+## poner un punto de interrupción para hacer debug:
+import pdb; pdb.set_trace()
+
+## objeto response, que se usa en rest. es un json, lo cogemos por get a través de url
+response = requests.get(URL)
+
+projects = response.json()
+
+
+### Framework Bottlepy
