@@ -1,0 +1,56 @@
+python3 es siempre mejor alternativa y mejor convertir a la 2 que hacerlo al revés.
+
+El intérprete de python es tan fácil de ejecutar como escribir python3 en el terminal.
+
+Hola mundo
+
+no es un lenguaje tipado
+ducktyping
+si el valor que metes en una variable parece un entero, se comporta como un entero.... es un entero
+no haria falta decir string, ni var...
+
+el intérprete de python
+
+$ python  --> cuando estás en python3 aparece >>>
+
+>>> print("hello world")
+>>> 2 + 2
+>>> 2 + 3 * 4
+>>> import os
+>>> os.path.abspath(os.curdir)
+>>> name = input()
+>>> print("Hola, ", name)
+>>> def say_hi():
+>>>    print("hi")
+>>>
+>>> say_hi()
+>>> import this  // el zen de python, como hacerlo bien
+>>> import antigravity // una web muy loca
+
+Salimos del interprete (ctrl+d)
+
+ipython!
+
+
+(mirar como transformar el tabulador en indentar 4 espacios para evitar caracteres indeseados)
+
+$ vim hola.py
+'''
+print("hola")
+
+def say_hi(num):
+    if num < 10:
+        print("hi")
+    else:
+        print("ho ho ho")
+
+say_hi(1)
+say_hi(12)
+
+result = 2 + 3
+print(result)
+
+name = input("dime tu nombre: ")
+print("Hola, ", name)
+'''
+$ python3 hola.py
